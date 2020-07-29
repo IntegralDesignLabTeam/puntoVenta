@@ -50,30 +50,31 @@ public class NewJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(640, 400));
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del producto"));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 348));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Producto");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 9, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         jLabel2.setText("Imagen");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 70, -1, -1));
 
         jLabel3.setText("Precio");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 9, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
         jLabel4.setText("Unidades");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 82, -1, -1));
 
         jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 34, 156, 110));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 120, 100));
 
         txtPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecioActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 6, -1, -1));
+        jPanel1.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
         jPanel1.add(txtUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 79, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -101,7 +102,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel1.add(btnTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 122, -1, -1));
 
         opcionProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(opcionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 6, 129, -1));
+        jPanel1.add(opcionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 129, -1));
 
         jLabel6.setText("Subtotal");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, -1, -1));
