@@ -62,6 +62,9 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name=".SF NS Text" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Producto"/>
           </Properties>
           <Constraints>
@@ -72,6 +75,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name=".SF NS Text" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Imagen"/>
           </Properties>
           <Constraints>
@@ -82,6 +88,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name=".SF NS Text" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Precio"/>
           </Properties>
           <Constraints>
@@ -92,11 +101,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name=".SF NS Text" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Unidades"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="283" y="82" width="-1" height="-1"/>
+              <AbsoluteConstraints x="280" y="80" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -123,7 +135,7 @@
         <Component class="javax.swing.JTextField" name="txtUnidades">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="347" y="79" width="-1" height="-1"/>
+              <AbsoluteConstraints x="350" y="80" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -232,6 +244,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name=".SF NS Text" size="14" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Subtotal"/>
           </Properties>
           <Constraints>
@@ -242,6 +257,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name=".SF NS Text" size="14" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="IVA"/>
           </Properties>
           <Constraints>
@@ -252,6 +270,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name=".SF NS Text" size="14" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Total"/>
           </Properties>
           <Constraints>
