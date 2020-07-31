@@ -8,13 +8,27 @@
  *
  * @author lalo
  */
-public class NewJFrame extends javax.swing.JFrame {
+import java.util.*;
+import javax.swing.*;
 
+public class NewJFrame extends javax.swing.JFrame {
+    
+    List<Producto> lista = new ArrayList();
+    
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+        lista.add(new Producto("Memoria USB", 5, 177.00, "img/usb.png"));
+        lista.add(new Producto("Memoria USB C", 7, 260.00, "img/usbC.jpg"));
+        lista.add(new Producto("Cable USB", 10, 140.00, "img/cableUSB.jpg"));
+        lista.forEach((i) -> {
+            cmbProducto.addItem(i.getProducto());
+        });
+        txtPrecio.setText(String.valueOf(lista.get(0).getPrecio()));
+        txtUnidades.setText(String.valueOf(lista.get(0).getCantidad()));
+        img.setIcon(new ImageIcon(getClass().getResource(lista.get(0).getImagen())));
     }
 
     /**
@@ -31,7 +45,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        img = new javax.swing.JLabel();
         txtPrecio = new javax.swing.JTextField();
         txtUnidades = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -39,7 +53,7 @@ public class NewJFrame extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnTotal = new javax.swing.JButton();
-        opcionProducto = new javax.swing.JComboBox<>();
+        cmbProducto = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -48,7 +62,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(640, 400));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 348));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,17 +77,18 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel4.setText("Unidades");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 82, -1, -1));
+        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 34, 156, 110));
 
-        jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 34, 156, 110));
-
+        txtPrecio.setEditable(false);
         txtPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecioActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 6, -1, -1));
-        jPanel1.add(txtUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 79, -1, -1));
+        jPanel1.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 6, 60, -1));
+
+        txtUnidades.setEditable(false);
+        jPanel1.add(txtUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 79, 60, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,8 +114,17 @@ public class NewJFrame extends javax.swing.JFrame {
         btnTotal.setText("Total");
         jPanel1.add(btnTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 122, -1, -1));
 
-        opcionProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(opcionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 6, 129, -1));
+        cmbProducto.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbProductoItemStateChanged(evt);
+            }
+        });
+        cmbProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbProductoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 6, 129, -1));
 
         jLabel6.setText("Subtotal");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, -1, -1));
@@ -138,6 +161,19 @@ public class NewJFrame extends javax.swing.JFrame {
     private void txtPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioActionPerformed
+
+    private void cmbProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbProductoActionPerformed
+
+    private void cmbProductoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbProductoItemStateChanged
+        // TODO add your handling code here:
+        int indx = cmbProducto.getSelectedIndex();
+        txtPrecio.setText(String.valueOf(lista.get(indx).getPrecio()));
+        txtUnidades.setText(String.valueOf(lista.get(indx).getCantidad()));
+        img.setIcon(new ImageIcon(getClass().getResource(lista.get(indx).getImagen())));
+
+    }//GEN-LAST:event_cmbProductoItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -178,11 +214,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnTotal;
+    private javax.swing.JComboBox<String> cmbProducto;
+    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -192,7 +229,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JComboBox<String> opcionProducto;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtUnidades;
     // End of variables declaration//GEN-END:variables

@@ -8,16 +8,16 @@
  *
  * @author lalo
  */
-public class Productos {
+public class Producto {
     String producto;
     int cantidad;
     double precio;
     String imagen;
 
-    public Productos() {
+    public Producto() {
     }
 
-    public Productos(String producto, int cantidad, double precio, String imagen) {
+    public Producto(String producto, int cantidad, double precio, String imagen) {
         this.producto = producto;
         this.cantidad = cantidad;
         this.precio = precio;
